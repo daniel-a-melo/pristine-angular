@@ -6,6 +6,7 @@ let webpack = require('webpack');
 let webpackMerge = require('webpack-merge');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+let CopyWebpackPlugin = require('copy-webpack-plugin');
 let helpers = require('./helpers');
 let commonConfig = require('./webpack.common.js');
 
@@ -50,6 +51,11 @@ let appConfig = webpackMerge(commonConfig, {
 
   plugins: [
 
+    
+    new CopyWebpackPlugin([{
+      from : './node_modules/zone.js/dist/zone.min.js', to : './lib' 
+    }]),
+
     /**
      * The 'tests' chunk shall not be included in 'index.html'
      */
@@ -59,6 +65,8 @@ let appConfig = webpackMerge(commonConfig, {
       chunks : ['zone', 'app'],
       chunksSortMode : 'dependency'
     }),
+
+    
 
 
   ]  

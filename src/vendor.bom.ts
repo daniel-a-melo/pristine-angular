@@ -6,6 +6,17 @@ Every change here requires rebuilding the vendor DLL
 (yarn build:vendor)
 */
 
+// Zone.js
+// require('zone.js/dist/zone');
+if (process.env.ENV === 'production') {
+  // Production
+} else {
+  // Development
+  Error['stackTraceLimit'] = Infinity;
+  require('zone.js/dist/long-stack-trace-zone');
+}
+
+
 // CoreJS
 import 'core-js/es6';
 import 'core-js/es7/reflect';
