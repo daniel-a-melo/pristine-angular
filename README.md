@@ -51,12 +51,20 @@ The instructions below assume the use of yarn
 ## Useful links
 
 1 - [Predictable long term caching with webpack](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)
+
 2 - [Testing angular faster with jest](https://www.xfive.co/blog/testing-angular-faster-jest/)
+
 3 - [Istanbul instrumenter loader](https://github.com/webpack-contrib/istanbul-instrumenter-loader)
+
 4 - [Karma coverage istanbul reporter](https://github.com/mattlewis92/karma-coverage-istanbul-reporter)
+
 5 - [Understanding @ngtools\webpack](https://www.ag-grid.com/ag-grid-webpack-ngtools/)
+
 6 - [How to do proper tree-shaking in Webpack 2](https://blog.craftlab.hu/how-to-do-proper-tree-shaking-in-webpack-2-e27852af8b21)
+
 7 - [AOT don'ts](https://github.com/qdouble/angular-webpack2-starter#aot--donts)
+
 8 - [NGC compiler options](https://github.com/angular/angular/blob/master/tools/%40angular/tsc-wrapped/src/options.ts)
+
 
 
