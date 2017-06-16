@@ -33,7 +33,7 @@ The instructions below assume the use of yarn
 
 ### Main improvements to be done
 
-- Add support to vendor CSS extraction
+- Uglify vendor CSS bundle
 - Add support to SASS
 - Review hash on filenames: Incluide hash on dlls and make sure they are stable upon builds. See link #1
 - Add an error screen on development mode

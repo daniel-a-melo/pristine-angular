@@ -37,6 +37,8 @@ if (process.env.ENV !== 'production') {
   require('@angular/platform-browser-dynamic/testing');
 }
 
-
 // RxJS
 import 'rxjs.bom';
+
+// Bulma
+import 'bulma/css/bulma.css';

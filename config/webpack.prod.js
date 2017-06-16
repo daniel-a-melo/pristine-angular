@@ -67,6 +67,7 @@ var prodConfig = webpackMerge(appConfig, {
     }),
 
     new AddAssetHtmlPlugin([
+      { filepath: helpers.root('lib', 'vendor.bundle.css'), includeSourcemap : false, hash : true, typeOfAsset : 'css' },      
       { filepath: helpers.root('node_modules/zone.js/dist', 'zone.min.js'), includeSourcemap : false, hash : true},
       { filepath: helpers.root('lib', 'vendor.bundle.js'), includeSourcemap : false, hash : true}
     ]),       

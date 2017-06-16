@@ -2,6 +2,7 @@
  * Configuration to generate vendor Dll
  */
 let webpack = require('webpack');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let path = require('path');
 let helpers = require('./helpers');
 
@@ -25,6 +26,18 @@ var vendorConfig = {
     library: 'vendor_lib',
   },
 
+  module : {
+    rules : [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              use: 'css-loader?sourceMap'
+        })
+      },      
+    ]
+  },
+
   plugins: [
       new webpack.DllPlugin({
         name: 'vendor_lib',
@@ -42,7 +55,10 @@ var vendorConfig = {
       new webpack.ContextReplacementPlugin(
          /angular(\\|\/)core(\\|\/)@angular/,
         path.resolve(__dirname, 'doesnotexist/')
-      )
+      ),
+
+     new ExtractTextPlugin({filename: '[name].bundle.css'}),      
+
   ]
 
 };
