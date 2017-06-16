@@ -10,7 +10,7 @@ var vendorConfig = function(env) {
 return {
 
   entry: {
-    vendor: [env ? './src/vendor-aot.bom.ts' : './src/vendor.bom.ts'],
+    vendor: ['./src/vendor.bom.ts'],
   },
 
   resolve: {
@@ -36,13 +36,6 @@ return {
     new webpack.ProvidePlugin({
       Reflect: 'core-js/es7/reflect',
     }),
-
-    new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
-      sourceMap: true,
-      mangle: {
-        keep_fnames: true
-      }
-    }),      
       
       //Needed to remove warnings with webpack2 and angular2. Not needed with webpack 1
       //https://github.com/angular/angular/issues/11580
