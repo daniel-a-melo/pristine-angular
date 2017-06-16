@@ -5,9 +5,7 @@ let webpack = require('webpack');
 let path = require('path');
 let helpers = require('./helpers');
 
-var vendorConfig = function(env) {
-
-return {
+var vendorConfig = {
 
   entry: {
     vendor: ['./src/vendor.bom.ts'],
@@ -44,10 +42,9 @@ return {
       new webpack.ContextReplacementPlugin(
          /angular(\\|\/)core(\\|\/)@angular/,
         path.resolve(__dirname, 'doesnotexist/')
-      )      
+      )
   ]
-};
 
-}
+};
 
 module.exports = vendorConfig;

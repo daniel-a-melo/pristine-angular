@@ -28,15 +28,13 @@ The instructions below assume the use of yarn
 
 ### Building for production
 
-- Run `yarn build:vendor:prod` for building vendor bundle without angular JIT compiler
+- Run `yarn build:vendor:prod` for building uglyfied vendor bundle without angular JIT compiler
 - Run `yarn build` for building for production (uglyfied + angular AOT compilation)
 
 ### Main improvements to be done
 
-- Split vendor build in two : dev and prod. prod add uglyfying and removes angular compiler
 - Add support to vendor CSS extraction
 - Add support to SASS
-- Check if file `vendor-aot.bom.ts` can be replaced by if statement/require call.
 - Review hash on filenames: Incluide hash on dlls and make sure they are stable upon builds. See link #1
 - Add an error screen on development mode
 - Setup code coverage report. See links #3 and #4 

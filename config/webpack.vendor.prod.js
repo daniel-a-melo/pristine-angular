@@ -2,13 +2,9 @@ let webpack = require('webpack');
 let webpackMerge = require('webpack-merge');
 let vendorBaseConfig = require('./webpack.vendor.js');
 
-let vendorProdConfig = webpackMerge.strategy({
-    entry : 'replace'
-})(vendorBaseConfig({}), {
+const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
-  entry: {
-    vendor: ['./src/vendor-aot.bom.ts'],
-  },
+let vendorProdConfig = webpackMerge(vendorBaseConfig, {
 
   plugins: [
     new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
@@ -16,7 +12,14 @@ let vendorProdConfig = webpackMerge.strategy({
       mangle: {
         keep_fnames: true
       }
-    })        
+    }),
+
+    new webpack.DefinePlugin({
+      'process.env': {
+        'ENV': JSON.stringify(ENV)
+      }
+    })
+
   ]
 
 
