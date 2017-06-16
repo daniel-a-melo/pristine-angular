@@ -33,8 +33,8 @@ The instructions below assume the use of yarn
 
 ### Main improvements to be done
 
-- Uglify vendor CSS bundle
-- Add support to SASS
+- CSS support on vendor : check if resources (images, fonts) referenced by CSS can be loaded
+- Add support to SASS (vendor and application)
 - Review hash on filenames: Incluide hash on dlls and make sure they are stable upon builds. See link #1
 - Add an error screen on development mode
 - Setup code coverage report. See links #3 and #4 
