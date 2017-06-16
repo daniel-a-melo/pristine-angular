@@ -5,6 +5,7 @@ let webpack = require('webpack');
 let webpackMerge = require('webpack-merge');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let CopyWebpackPlugin = require('copy-webpack-plugin');
+let AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 let AotPlugin = require('@ngtools/webpack').AotPlugin;
 let appConfig = require('./webpack.app.js');
 let helpers = require('./helpers');
@@ -43,11 +44,6 @@ var prodConfig = webpackMerge(appConfig, {
 
   plugins: [
 
-    // See comment on CommonsChunkPlugin in webpack.dev.js
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'zone']
-    }),
-
     // AOT Plugin 
     new AotPlugin({
       tsConfigPath: helpers.root('tsconfig-aot.json'),
@@ -69,11 +65,12 @@ var prodConfig = webpackMerge(appConfig, {
         'ENV': JSON.stringify(ENV)
       }
     }),
-    
-    //Copy DLLs to output directory
-    new CopyWebpackPlugin([{
-      from : './lib/*.js', to : '' 
-    }])
+
+    new AddAssetHtmlPlugin([
+      { filepath: helpers.root('node_modules/zone.js/dist', 'zone.min.js'), includeSourcemap : false, hash : true},
+      { filepath: helpers.root('lib', 'vendor.bundle.js'), includeSourcemap : false, hash : true}
+    ]),       
+  
 
   ]
 });

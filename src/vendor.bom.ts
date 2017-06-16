@@ -7,7 +7,6 @@ Every change here requires rebuilding the vendor DLL
 */
 
 // Zone.js
-// require('zone.js/dist/zone');
 if (process.env.ENV === 'production') {
   // Production
 } else {

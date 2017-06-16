@@ -28,20 +28,20 @@ The instructions below assume the use of yarn
 
 ### Building for production
 
-- Run `yarn build:vendor:aot` for building vendor bundle without angular JIT compiler
+- Run `yarn build:vendor:prod` for building vendor bundle without angular JIT compiler
 - Run `yarn build` for building for production (uglyfied + angular AOT compilation)
 
 ### Main improvements to be done
 
-- Retry to include Zone.JS into vendor dll bundle
+- Split vendor build in two : dev and prod. prod add uglyfying and removes angular compiler
+- Add support to vendor CSS extraction
 - Add support to SASS
-- Check if file `vendor-aot.bom.ts` can be replaced by if statement/require call. Check `src/zone.ts`
-- Try to setup css-loader/style-load on webpack.vendor.js
+- Check if file `vendor-aot.bom.ts` can be replaced by if statement/require call.
 - Review hash on filenames: Incluide hash on dlls and make sure they are stable upon builds. See link #1
 - Add an error screen on development mode
-- Experiment with Webpack 2's tree shaking feature to decrease vendor bundle size. (it may be necessary to not use DLL bundles though). See link #6
 - Setup code coverage report. See links #3 and #4 
 - Replace karma with Jest for running tests. See link #2
+- Experiment with Webpack 2's tree shaking feature to decrease vendor bundle size. (it may be necessary to not use DLL bundles though). See link #6
 
 ### Adding Ionic support
 

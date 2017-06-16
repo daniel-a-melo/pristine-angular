@@ -6,6 +6,7 @@ let webpack = require('webpack');
 let webpackMerge = require('webpack-merge');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+let AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 let CopyWebpackPlugin = require('copy-webpack-plugin');
 let helpers = require('./helpers');
 let commonConfig = require('./webpack.common.js');
@@ -13,10 +14,8 @@ let commonConfig = require('./webpack.common.js');
 let appConfig = webpackMerge(commonConfig, {
 
   entry: {
-    //Application code/assets strictly
-    'app': './src/main.ts',
-    //Zone.JS. Unfortunatelly can't be packaged as a DLL as global Zone isn't exposed (bug?)
-    'zone' : './src/zone.ts',
+    // Application code/assets strictly
+    'app': './src/main.ts'
   },
 
   module: {
@@ -51,23 +50,13 @@ let appConfig = webpackMerge(commonConfig, {
 
   plugins: [
 
-    
-    new CopyWebpackPlugin([{
-      from : './node_modules/zone.js/dist/zone.min.js', to : './lib' 
-    }]),
-
     /**
      * The 'tests' chunk shall not be included in 'index.html'
      */
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      //chunks : ['zone', 'app', 'bootstrap'],
-      chunks : ['zone', 'app'],
-      chunksSortMode : 'dependency'
-    }),
-
-    
-
+      chunks : ['app']
+    })
 
   ]  
 

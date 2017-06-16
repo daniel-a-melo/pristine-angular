@@ -8,7 +8,7 @@ window.jasmineRequire = require("jasmine-core/lib/jasmine-core/jasmine.js");
 require("jasmine-core/lib/jasmine-core/jasmine-html.js");
 require("jasmine-core/lib/jasmine-core/boot.js");
 
-//require('zone.js/dist/zone');
+// In browser zone.js core file is loaded separately. Check webpack config
 require('zone.js/dist/long-stack-trace-zone');
 require('zone.js/dist/proxy');
 require('zone.js/dist/sync-test');
