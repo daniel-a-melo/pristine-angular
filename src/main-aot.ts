@@ -4,8 +4,7 @@ import {AppModuleNgFactory} from '../aot/src/app/app.module.ngfactory';
 import { enableProdMode } from '@angular/core';
 
 
-import 'rxjs.bom';
-import '../assets/css/styles.css';
+import './app.bom';
 
 if (process.env.ENV === 'production') {
     console.log('PROD MODE');

@@ -44,7 +44,23 @@ let appConfig = webpackMerge(commonConfig, {
         use: {
           loader: 'raw-loader'
         }
-      }
+      },
+      {
+        test: /\.scss$/,
+        exclude: helpers.root('src', 'app'),
+        use: ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              use: ['css-loader?sourceMap', 'sass-loader']
+        })
+      },
+      {
+        test: /\.scss$/,
+        include: helpers.root('src', 'app'),
+        use: [
+          { loader: 'raw-loader' },
+          { loader: 'sass-loader' }
+        ]
+      }            
     ]
   }, 
 

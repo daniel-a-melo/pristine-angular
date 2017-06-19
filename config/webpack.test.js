@@ -36,7 +36,17 @@ let testConfig = webpackMerge(commonConfig, {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
         use: 'raw-loader'
-      }
+      },
+      {
+        test: /\.scss$/,
+        exclude: helpers.root('src', 'app'),
+        use: 'null-loader'
+      },
+      {
+        test: /\.scss$/,
+        include: helpers.root('src', 'app'),
+        use: ['raw-loader', 'sass-loader']
+      },            
     ]
   },
 
