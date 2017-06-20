@@ -36,7 +36,8 @@ The instructions below assume the use of yarn
 - CSS support on vendor : check if resources (images, fonts) referenced by CSS can be loaded
 - Review hash on filenames: Incluide hash on dlls and make sure they are stable upon builds. See link #1
 - Add an error screen on development mode
-- Setup code coverage report. See links #3 and #4 
+- Setup code coverage report. See links #3 and #4
+- Upgrade to webpack 3. Wait until plugins are released with correct peer dependencies. See link #9 
 - Replace karma with Jest for running tests. See link #2
 - Experiment with Webpack 2's tree shaking feature to decrease vendor bundle size. (it may be necessary to not use DLL bundles though). See link #6
 
@@ -62,6 +63,8 @@ The instructions below assume the use of yarn
 7 - [AOT don'ts](https://github.com/qdouble/angular-webpack2-starter#aot--donts)
 
 8 - [NGC compiler options](https://github.com/angular/angular/blob/master/tools/%40angular/tsc-wrapped/src/options.ts)
+
+9 - [Webpack 3 official release](https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b)
 
 
 
