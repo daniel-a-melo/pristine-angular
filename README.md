@@ -35,11 +35,10 @@ The instructions below assume the use of yarn
 
 - CSS support on vendor : check if resources (images, fonts) referenced by CSS can be loaded
 - Review hash on filenames: Incluide hash on dlls and make sure they are stable upon builds. See link #1
-- Add an error screen on development mode
 - Setup code coverage report. See links #3 and #4
-- Upgrade to webpack 3. Wait until plugins are released with correct peer dependencies. See link #9 
+- Enable webpack 3 scope hoisting. See link #9 
 - Replace karma with Jest for running tests. See link #2
-- Experiment with Webpack 2's tree shaking feature to decrease vendor bundle size. (it may be necessary to not use DLL bundles though). See link #6
+- Experiment with Webpack 3's tree shaking feature to decrease vendor bundle size. (it may be necessary to not use DLL bundles though). See link #6
 
 ### Adding Ionic support
 
