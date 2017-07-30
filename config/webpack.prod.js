@@ -36,6 +36,7 @@ var prodConfig = webpackMerge(appConfig, {
       },      
       {
         test: /\.ts$/,
+        exclude : helpers.root('aot'),
         enforce: 'pre',
         loader: 'tslint-loader',
       }

@@ -91,7 +91,8 @@ let devConfig = webpackMerge(appConfig, {
     historyApiFallback: {
       disableDotRule : true
     },
-    stats: 'minimal',
+    //stats: 'minimal',
+    overlay : true
     
   }
 });
