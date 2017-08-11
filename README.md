@@ -31,6 +31,17 @@ The instructions below assume the use of yarn
 - Run `yarn build:vendor:prod` for building uglyfied vendor bundle without angular JIT compiler
 - Run `yarn build` for building for production (uglyfied + angular AOT compilation)
 
+### Debugging
+
+- Debuggin in VSCode should just work. Use task `Launch Chromium against localhost`. Make sure there's no existing Chrome/Chromium instances running
+
+### VSCode recommended extensions
+
+- Debugger for Chrome (Microsoft)
+- ESLint (Dirk Baeumer)
+- TSLint (egamma)
+- TypeScript Importer (pmneo)
+
 ### Main improvements to be done
 
 - CSS support on vendor : check if resources (images, fonts) referenced by CSS can be loaded
