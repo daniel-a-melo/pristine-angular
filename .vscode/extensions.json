@@ -6,6 +6,7 @@
 		"johnpapa.angular2",
 		"natewallace.angular2-inline",
 		"msjsdiag.debugger-for-chrome",
-		"eg2.tslint"
+		"eg2.tslint",
+		"robertohuertasm.vscode-icons"
 	]
 }
