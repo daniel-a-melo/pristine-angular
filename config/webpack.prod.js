@@ -6,7 +6,7 @@ let webpackMerge = require('webpack-merge');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let CopyWebpackPlugin = require('copy-webpack-plugin');
 let AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-let AotPlugin = require('@ngtools/webpack').AotPlugin;
+let AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 let appConfig = require('./webpack.app.js');
 let helpers = require('./helpers');
 
@@ -16,7 +16,7 @@ var prodConfig = webpackMerge(appConfig, {
   devtool: 'source-map',
 
   entry: {
-    'app' : './src/main-aot.ts',
+    'app' : './src/main.ts',
   },  
 
   output: {
@@ -29,7 +29,7 @@ var prodConfig = webpackMerge(appConfig, {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
         use: {
           loader: '@ngtools/webpack'
         }
@@ -46,9 +46,11 @@ var prodConfig = webpackMerge(appConfig, {
   plugins: [
 
     // AOT Plugin 
-    new AotPlugin({
+    new AngularCompilerPlugin({
+      mainPath: helpers.root('src/main.ts'),
+      platform : 0,
       tsConfigPath: helpers.root('tsconfig-aot.json'),
-      entryModule: helpers.root('src/app/app.module#AppModule'),
+      //entryModule: helpers.root('src/app/app.module#AppModule'),
       skipCodeGeneration : false
     }),        
 
