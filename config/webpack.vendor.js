@@ -44,9 +44,9 @@ var vendorConfig = {
         path: 'lib/vendor-manifest.json',
       }),
 
-    new webpack.ProvidePlugin({
-      Reflect: 'core-js/es7/reflect',
-    }),
+    // new webpack.ProvidePlugin({
+    //   Reflect: 'core-js/es7/reflect',
+    // }),
       
       //Needed to remove warnings with webpack2 and angular2. Not needed with webpack 1
       //https://github.com/angular/angular/issues/11580
