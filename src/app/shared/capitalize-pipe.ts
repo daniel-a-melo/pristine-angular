@@ -2,6 +2,7 @@
 
 import { Pipe, PipeTransform } from '@angular/core';
 
+// tslint:disable-next-line:pipe-naming
 @Pipe({ name: 'capitalize' })
 export class CapitalizePipe implements PipeTransform {
 

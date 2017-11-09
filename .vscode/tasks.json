@@ -2,18 +2,21 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
-    "command": "npm",
-    "isShellCommand": true,
-    "showOutput": "always",
-    "suppressTaskName": true,
     "tasks": [
         {
-            "taskName": "lint",
-            "suppressTaskName": true,
+            "label": "lint",
+            "command": "npm",
+            "type": "shell",
             "args": [ "run", "lint"],
             "problemMatcher": {
                 "base": "$tslint5",
                 "fileLocation": "relative"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
             }
         }
     ]

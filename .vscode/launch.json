@@ -7,14 +7,14 @@
             "request": "launch",
             "name": "Launch Chromium against localhost",
             "url": "http://localhost:8080",
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceFolder}"
         },
         {
             "type": "chrome",
             "request": "attach",
             "name": "Attach to Chrome",
             "port": 9222,
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }

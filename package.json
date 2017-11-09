@@ -47,7 +47,7 @@
     "add-asset-html-webpack-plugin": "^2.1.2",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.3.0",
-    "codelyzer": "^4.0.0",
+    "codelyzer": "^4.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
