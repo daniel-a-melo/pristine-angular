@@ -23,11 +23,11 @@ import 'core-js/es7/array';
 
 // Angular
 import '@angular/platform-browser';
-// import '@angular/platform-browser-dynamic';
 import '@angular/core';
 import '@angular/common';
 import '@angular/forms';
-import '@angular/http';
+// import '@angular/http';
+import '@angular/common/http';
 import '@angular/router';
 // [REVIEW] WORKAROUND: This package must be part of vendor DLL in order to jasmine browser runner to work
 // import '@angular/platform-browser-dynamic/testing';

@@ -44,6 +44,8 @@ The instructions below assume the use of yarn
 
 ### Main improvements to be done
 
+- ModuleConcatenationPlugin and Dlls together cause issues. Some modules that were supposed to be delegated ends up not being.
+  RxJS 5.5's new lettable operators require ModuleConcatenationPlugins.
 - Remove ExtractTextPlugin for non-prod configurations (perfomance reasons)
 - Enable HMR (under CLI argument)
 - CSS support on vendor : check if resources (images, fonts) referenced by CSS can be loaded

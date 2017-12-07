@@ -5,6 +5,7 @@ let webpack = require('webpack');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let path = require('path');
 let helpers = require('./helpers');
+let rxPaths = require('rxjs/_esm5/path-mapping');
 
 var vendorConfig = {
 
@@ -17,7 +18,8 @@ var vendorConfig = {
     modules : [
       path.resolve('./src'),
       './node_modules'
-    ]       
+    ],
+    alias: rxPaths() 
   },    
 
   output: {
@@ -43,6 +45,8 @@ var vendorConfig = {
         name: 'vendor_lib',
         path: 'lib/vendor-manifest.json',
       }),
+
+      //new webpack.optimize.ModuleConcatenationPlugin(),
 
     // new webpack.ProvidePlugin({
     //   Reflect: 'core-js/es7/reflect',
