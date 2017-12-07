@@ -7,6 +7,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let helpers = require('./helpers');
 let path = require('path');
+let rxPaths = require('rxjs/_esm5/path-mapping');
 
 
 let commonsConfig = {
@@ -16,7 +17,8 @@ let commonsConfig = {
     modules : [
       path.resolve('./src'),
       './node_modules'
-    ]    
+    ],
+    alias: rxPaths()    
   },  
 
   module: {
