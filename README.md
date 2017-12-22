@@ -4,7 +4,7 @@
 
 Pristine Angular is a personal start kit for Angular applications
 
-* Angular 5
+* Angular 5+
 * Tooling: Webpack, Karma, TSLint
 
 ### Pre-requisites for setting up a development environment
