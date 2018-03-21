@@ -44,6 +44,11 @@ The instructions below assume the use of yarn
 
 ### Main improvements to be done
 
+
+- Update to Webpack 4
+    ExtractTextPlugin is deprecated. See https://github.com/webpack-contrib/mini-css-extract-plugin
+    ModuleConcatenationPlugin is deprecated
+    CommonChunksPlugin is deprecated
 - ModuleConcatenationPlugin and Dlls together cause issues. Some modules that were supposed to be delegated ends up not being.
   RxJS 5.5's new lettable operators require ModuleConcatenationPlugins.
 - Remove ExtractTextPlugin for non-prod configurations (perfomance reasons)
