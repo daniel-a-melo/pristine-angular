@@ -17,19 +17,19 @@ Pristine Angular is a personal start kit for Angular applications
 The instructions below assume the use of yarn
 
 - Run `yarn install`
-- Run `yarn build:vendor` for building the library bundles (aggressive caching of 3rd-party code to speed up Webpack)
-- Run `yarn start` to run the webpack dev server (port 8080)
-- Run `yarn lint` to run TSLint against the source code
+- Run `yarn run run build:vendor` for building the library bundles (aggressive caching of 3rd-party code to speed up Webpack)
+- Run `yarn run run start` to run the webpack dev server (port 8080)
+- Run `yarn run run lint` to run TSLint against the source code
 
 ### Running automated tests
 
-- `yarn test` runs the tests using Karma and PhantomJS
-- `yarn start` and browsing to `http://localhost:8080/tests.html` runs the tests using Jasmine browser runner (only available on dev server)
+- `yarn run run test` runs the tests using Karma and PhantomJS
+- `yarn run run start` and browsing to `http://localhost:8080/tests.html` runs the tests using Jasmine browser runner (only available on dev server)
 
 ### Building for production
 
-- Run `yarn build:vendor:prod` for building uglyfied vendor bundle without angular JIT compiler
-- Run `yarn build` for building for production (uglyfied + angular AOT compilation)
+- Run `yarn run run build:vendorProd` for building uglyfied vendor bundle without angular JIT compiler
+- Run `yarn run run build:app` for building for production (uglyfied + angular AOT compilation)
 
 ### Debugging
 

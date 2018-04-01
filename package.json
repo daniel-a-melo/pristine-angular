@@ -9,19 +9,7 @@
   "license": "MIT",
   "scripts": {
     "tsc": "tsc",
-    "ngc": "ngc",
-    "clean-src": "rimraf ./src/**/*.js && rimraf ./src/**/*.map && rimraf ./src/**/*metadata.json",
-    "clean": "rimraf dist && rimraf aot && yarn run clean-src",
-    "aot-compile": "yarn run clean && ngc -p tsconfig-aot.json",
-    "start": "webpack-dev-server -w --inline --progress --port 8080 --debug",
-    "test": "karma start",
-    "build": "yarn run clean && webpack --config config/webpack.prod.js --display-chunks --display-modules --progress",
-    "build:profile": "rimraf dist && webpack --config config/webpack.prod.js --profile --json > app-bundle-stats.json",
-    "build:vendor": "rimraf lib && webpack --config config/webpack.vendor.js --display-chunks --display-modules --progress",
-    "build:vendor:profile": "rimraf lib && webpack --config config/webpack.vendor.js --profile --json > vendor-bundle-stats.json",
-    "build:vendor:prod": "rimraf lib && webpack --config config/webpack.vendor.prod.js --display-chunks --display-modules --progress",
-    "webpack-bundle-analyzer": "webpack-bundle-analyzer",
-    "lint": "tslint src/**/*.ts{,x}"
+    "ngc": "ngc"
   },
   "dependencies": {
     "@angular/common": "^5.1.0",
@@ -34,15 +22,15 @@
     "@angular/router": "^5.1.0",
     "bulma": "^0.6.1",
     "core-js": "^2.5.1",
+    "jasmine-core": "^2.8.0",
     "rxjs": "5.5.5",
-    "zone.js": "0.8.18",
-    "jasmine-core": "^2.8.0"    
+    "zone.js": "0.8.18"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.8.2",
     "@angular/compiler-cli": "^5.1.0",
     "@ngtools/webpack": "^1.9.0",
     "@types/core-js": "^0.9.43",
+    "@types/jasmine": "^2.8.2",
     "@types/node": "^8.0.56",
     "add-asset-html-webpack-plugin": "^2.1.2",
     "angular2-template-loader": "^0.6.2",
@@ -69,6 +57,7 @@
     "phantomjs-prebuilt": "^2.1.16",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
+    "runjs": "^4.3.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "tslint": "5.8.0",
